@@ -1,0 +1,172 @@
+body {
+    background-color: rgb(39, 39, 39)
+}
+
+h1 {
+    font-family: "Rubik", sans-serif;
+    color: antiquewhite;
+    text-shadow: 5px 5px 5px black;
+    cursor: default;
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: antiquewhite;
+    cursor: default;
+}
+
+a {
+    color: antiquewhite;
+    cursor: default;
+}
+
+a:hover {
+    color: rgb(155, 145, 132);
+}
+
+a.home {
+    float: left;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+a.home:hover {
+    color: rgb(155, 145, 132);
+}
+
+.container-details {
+    background-image: linear-gradient(to top left, black, rgb(41, 2, 87), blue);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    box-shadow: 10px 10px 6px 0px rgb(70, 70, 70);
+}
+
+.container-details a {
+    float: left;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+.container-details h1 {
+    position: relative;
+    left: -25px;
+    top: 20px;
+    margin-bottom: 45px;
+}
+
+.container-details p {
+    position: relative;
+    top: 60px;
+}
+
+.container-list {
+    background-image: linear-gradient(to top left, black, rgb(41, 2, 87), blue);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    box-shadow: 10px 10px 6px 0px rgb(70, 70, 70);
+}
+
+.container-list h1 {
+    position: relative;
+    left: 10px;
+    float: left;
+}
+
+.container-list table {
+    clear: left;
+    position: relative;
+    left: 50%;
+    top: 60px;
+    transform: translate(-30%);
+}
+
+.container-list th {
+    font-family: "Rubik", sans-serif;
+    color: antiquewhite;
+    text-shadow: 5px 5px 5px black;
+    cursor: default;
+    font-size: 1.5rem;
+}
+
+.container-list td p {
+    position: relative;
+    right: 75%;
+}
+
+.container-list td a {
+    margin-left: 5px;
+}
+
+.create {
+    position: relative;
+    float: right;
+    margin: 10px;
+}
+
+.container-update {
+    background-image: linear-gradient(to top left, black, rgb(41, 2, 87), blue);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    box-shadow: 10px 10px 6px 0px rgb(70, 70, 70);
+}
+
+.form-wrapper {
+    position: relative;
+    top: 100px;
+}
+
+.form-wrapper input[type="submit"] {
+    margin-top: 30px;
+    background-color: antiquewhite;
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.form-wrapper input[type="submit"]:hover {
+    background-color: rgb(184, 184, 184);
+}
+
+.container-delete {
+    background-image: linear-gradient(to top left, black, rgb(41, 2, 87), blue);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    box-shadow: 10px 10px 6px 0px rgb(70, 70, 70);
+}
+
+.container-delete .form-wrapper {
+    position: relative;
+    top: 100px;
+}
+
+.container-delete .form-wrapper h1 {
+    position: relative;
+    right: 20px;
+}
+
+.container-create {
+    background-image: linear-gradient(to top left, black, rgb(41, 2, 87), blue);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    box-shadow: 10px 10px 6px 0px rgb(70, 70, 70);
+}

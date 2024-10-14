@@ -1,0 +1,16 @@
+{% extends "./base.html" %}
+
+{% block content %}
+
+<div class="container-delete">
+    <a class="home" href="{% url 'task-list' %}"><i class="material-icons">arrow_back</i></a>
+    <div class="form-wrapper">
+        <h1>Are you sure?</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Yes" />
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

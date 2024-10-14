@@ -1,17 +1,28 @@
-<h1>{{task.title}}</h1>
+{% extends "./base.html" %}
 
-{% if task.description %}
+{% block content %}
+
+<div class="container-details">
+    
+    <a class="home" href="{% url 'task-list' %}"><i class="material-icons">arrow_back</i></a>
+    <br/>
+    <h1>{{task.title}}</h1>
+    <hr style="width: 200px;">
+    {% if task.description %}
     <p>{{task.description}}</p>
-{% else %}
-    <p>No Description Added</p>
-{% endif %}
-
-<p>Date Created: {{task.create}}</p>
-<p>
-    Status: 
-    {% if task.complete == True %} 
-        Completed
     {% else %}
-        Unfinished
+    <p>No Description Added</p>
     {% endif %}
-</p>
+
+    <p>Date Created: {{task.create}}</p>
+    <p>
+        Status:
+        {% if task.complete == True %}
+        Completed
+        {% else %}
+        Unfinished
+        {% endif %}
+    </p>
+</div>
+
+{% endblock content %}
