@@ -1,6 +1,7 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.shortcuts import render
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
@@ -18,11 +19,6 @@ class MyLoginView(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('task-list')
-
-
-def logout_view(request):
-    logout(request)
-    return redirect('login')
 
 
 class RegisterView(FormView):
@@ -94,3 +90,23 @@ class TaskDelete(LoginRequiredMixin, DeleteView):
     context_object_name = "task"
     template_name = "main/task_delete.html"
     success_url = reverse_lazy("task-list")
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+
+def statistics_view(request):
+    context = {}
+    
+    user = request.user
+    tasks = Task.objects.all()
+    user_tasks = tasks.filter(user=user)
+    context['tasks'] = user_tasks
+    total_tasks = context['tasks'].count()
+    completed_tasks = context['tasks'].filter(complete=True).count()
+    context['total_tasks'] = total_tasks
+    context['completed_tasks'] = completed_tasks   
+    
+    return render(request, "main/statistics.html", context)

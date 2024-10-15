@@ -1,0 +1,11 @@
+{% extends "./base.html" %}
+
+{% block content %}
+    <a class="home" href="{% url 'task-list' %}"><i class="material-icons">arrow_back</i></a>
+    
+    <p>Total Tasks: {{total_tasks}}</p>
+    <p>Completed Tasks: {{completed_tasks}}</p>
+
+    <label for="completion_bar">Completion</label>
+    <progress id="completion_bar" value="{{completed_tasks}}" max="{{total_tasks}}"></progress>
+{% endblock content %}
