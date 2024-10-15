@@ -2,25 +2,31 @@
 
 {% block content %}
 
-<div class="container-list">
-    <h1>ToDo List</h1>
+    {% if request.user.is_authenticated %}
+        <h1>{{request.user|title}}</h1>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <h1>You are logged out</h1>
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
 
-    <div class="create">
-        <a href="{% url 'task-create' %}"><i class="material-icons">add</i></a>
-    </div>
+    <form method="get">
+        <input type="text" name="search-text">
+        <input type="submit" value="Search">
+    </form>
+
+    <a href="{% url 'task-create' %}"><i class="material-icons">add</i></a>
     <table>
         <tr>
             <th>
                 ToDos
             </th>
         </tr>
-        <hr style="clear: left; width: 150px; position: relative; right: 165px; bottom: 10px;">
         {% for task in tasks %}
         <tr>
             <td>
                 <p>{{task.title}}</p>
             </td>
-            <td><a href="{% url 'task-details' task.id %}"><i class="material-icons">info</i></a></td>
             <td><a href="{% url 'task-update' task.id %}"><i class="material-icons">edit</i></a></td>
             <td><a href="{% url 'task-delete' task.id %}"><i class="material-icons">delete</i></a></td>
         </tr>
@@ -28,6 +34,5 @@
         <p>No Items Created</p>
         {% endfor %}
     </table>
-</div>
 
 {% endblock content %}

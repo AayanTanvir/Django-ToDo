@@ -2,15 +2,11 @@
 
 {% block content %}
 
-<div class="container-create">
     <a class="home" href="{% url 'task-list' %}"><i class="material-icons">arrow_back</i></a>
     <form method="POST" action="">
         {% csrf_token %}
-        <div class="form-wrapper">
             {{form.as_p}}
             <input type="submit" value="Create" />
-        </div>
     </form>
-</div>
 
 {% endblock content %}

@@ -1,15 +1,12 @@
 {% extends "./base.html" %}
 
 {% block content %}
-<div class="container-update">
+
     <a class="home" href="{% url 'task-list' %}"><i class="material-icons">arrow_back</i></a>
     <form method="post" action="">
         {% csrf_token %}
-        <div class="form-wrapper">
-            {{form.as_p}}
-            <input type="submit" value="Apply" />
-        </div>
+        {{form.as_p}}
+        <input type="submit" value="Apply" />
     </form>
-</div>
 
 {% endblock content %}
